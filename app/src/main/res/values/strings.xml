@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">My First App</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="subMenu_Language">Select Language...</string>
+    <string name="editTextLast">Last Reading</string>
+    <string name="editTextCurrent">Current Reading</string>
+    <string name="buttonCalculateText">Calculate</string>
+
+    <string name="resultTextView">Result</string>
+
+    <string name="ErrorInFormat">Enter Reading in proper format...</string>
+    <string name="consumptionUnit" translatable="false">" Kw/h"</string>
+    <string name="paymentAmount">"Payment Amount: "</string>
+    <string name="nextLine" translatable="false">"\n"</string>
+    <string name="tabulator" translatable="false">"\t"</string>
+    <string name="emptyString" translatable="false">""</string>
+
+    <string name="consumption">"Consumption: "</string>
+    <string name="language_english">"English"</string>
+    <string name="language_spanish">"Spanish"</string>
+    <string name="about">About...</string>
+</resources>

@@ -1,0 +1,110 @@
+{
+ "Range_1" : {
+   "minValue" : 0,
+   "maxValue" : 100,
+   "tax"      : 0.3278,
+   "isLast"   : "False"
+ },
+  "Range_2" : {
+    "minValue" : 101,
+    "maxValue" : 150,
+    "tax"      : 1.0656,
+    "isLast"   : "False"
+  },
+  "Range_3" : {
+    "minValue" : 151,
+    "maxValue" : 200,
+    "tax"      : 1.4344,
+    "isLast"   : "False"
+  },
+  "Range_4" : {
+    "minValue" : 201,
+    "maxValue" : 250,
+    "tax"      : 2.4588,
+    "isLast"   : "False"
+  },
+  "Range_5" : {
+    "minValue" : 251,
+    "maxValue" : 300,
+    "tax"      : 3.0,
+    "isLast"   : "False"
+  },
+  "Range_6" : {
+    "minValue" : 301,
+    "maxValue" : 350,
+    "tax"      : 4.0,
+    "isLast"   : "False"
+  },
+  "Range_7" : {
+    "minValue" : 351,
+    "maxValue" : 400,
+    "tax"      : 5.0,
+    "isLast"   : "False"
+  },
+  "Range_8" : {
+    "minValue" : 401,
+    "maxValue" : 450,
+    "tax"      : 6.0,
+    "isLast"   : "False"
+  },
+  "Range_9" : {
+    "minValue" : 451,
+    "maxValue" : 500,
+    "tax"      : 7.0,
+    "isLast"   : "False"
+  },
+  "Range_10" : {
+    "minValue" : 501,
+    "maxValue" : 600,
+    "tax"      : 9.20,
+    "isLast"   : "False"
+  },
+  "Range_11" : {
+    "minValue" : 601,
+    "maxValue" : 700,
+    "tax"      : 9.45,
+    "isLast"   : "False"
+  },
+  "Range_12" : {
+    "minValue" : 701,
+    "maxValue" : 1000,
+    "tax"      : 9.85,
+    "isLast"   : "False"
+  },
+  "Range_13" : {
+    "minValue" : 1001,
+    "maxValue" : 1800,
+    "tax"      : 10.80,
+    "isLast"   : "False"
+  },
+  "Range_14" : {
+    "minValue" : 1801,
+    "maxValue" : 2600,
+    "tax"      : 11.80,
+    "isLast"   : "False"
+  },
+  "Range_15" : {
+    "minValue" : 2601,
+    "maxValue" : 3400,
+    "tax"      : 12.90,
+    "isLast"   : "False"
+  },
+  "Range_16" : {
+    "minValue" : 3401,
+    "maxValue" : 4200,
+    "tax"      : 13.95,
+    "isLast"   : "False"
+  },
+  "Range_17" : {
+    "minValue" : 4201,
+    "maxValue" : 5000,
+    "tax"      : 15.0,
+    "isLast"   : "False"
+  },
+  "Range_18" : {
+    "minValue" : 5001,
+    "maxValue" : 0,
+    "tax"      : 20.0,
+    "isLast"   : "True"
+  }
+}

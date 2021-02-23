@@ -1,0 +1,62 @@
+{
+  "Range_1" : {
+    "minValue" : 0,
+    "maxValue" : 100,
+    "tax"      : 0.09,
+    "isLast"   : "False"
+  },
+  "Range_2" : {
+    "minValue" : 101,
+    "maxValue" : 150,
+    "tax"      : 0.3,
+    "isLast"   : "False"
+  },
+  "Range_3" : {
+    "minValue" : 151,
+    "maxValue" : 200,
+    "tax"      : 0.4,
+    "isLast"   : "False"
+  },
+  "Range_4" : {
+    "minValue" : 201,
+    "maxValue" : 250,
+    "tax"      : 0.6,
+    "isLast"   : "False"
+  },
+  "Range_5" : {
+    "minValue" : 251,
+    "maxValue" : 300,
+    "tax"      : 0.8,
+    "isLast"   : "False"
+  },
+  "Range_6" : {
+    "minValue" : 301,
+    "maxValue" : 350,
+    "tax"      : 1.5,
+    "isLast"   : "False"
+  },
+  "Range_7" : {
+    "minValue" : 351,
+    "maxValue" : 500,
+    "tax"      : 1.8,
+    "isLast"   : "False"
+  },
+  "Range_8" : {
+    "minValue" : 501,
+    "maxValue" : 1000,
+    "tax"      : 2.0,
+    "isLast"   : "False"
+  },
+  "Range_9" : {
+    "minValue" : 1001,
+    "maxValue" : 5000,
+    "tax"      : 3.0,
+    "isLast"   : "False"
+  },
+  "Range_10" : {
+    "minValue" : 5001,
+    "maxValue" : 0,
+    "tax"      : 5.0,
+    "isLast"   : "True"
+  }
+}
