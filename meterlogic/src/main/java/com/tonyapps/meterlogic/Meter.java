@@ -76,13 +76,13 @@ public class Meter {
                                                      : new Range(minVal, maxVal, tax));
                    count = this.tariff2009.getRangeAmount();
 
-                   this.tariff.addRange((value.getBoolean("isLast")) ?
-                                         new Range(value.getInt("minValue"),
-                                                   (float)value.getDouble("tax")) :
-                                         new Range(value.getInt("minValue"),
-                                                   value.getInt("maxValue"),
-                                                   (float)value.getDouble("tax")));
-                   count = this.tariff.getRangeAmount();
+//                   this.tariff.addRange((value.getBoolean("isLast")) ?
+//                                         new Range(value.getInt("minValue"),
+//                                                   (float)value.getDouble("tax")) :
+//                                         new Range(value.getInt("minValue"),
+//                                                   value.getInt("maxValue"),
+//                                                   (float)value.getDouble("tax")));
+//                   count = this.tariff.getRangeAmount();
                 }
             }
         }
