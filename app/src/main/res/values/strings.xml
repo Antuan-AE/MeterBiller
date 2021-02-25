@@ -6,7 +6,6 @@
     <string name="editTextLast">Last Reading</string>
     <string name="editTextCurrent">Current Reading</string>
     <string name="buttonCalculateText">Calculate</string>
-
     <string name="resultTextView">Result</string>
 
     <string name="ErrorInFormat">Enter Reading in proper format...</string>
@@ -20,4 +19,5 @@
     <string name="language_english">"English"</string>
     <string name="language_spanish">"Spanish"</string>
     <string name="about">About...</string>
+    <string name="title_activity_tariff">activityTariff</string>
 </resources>

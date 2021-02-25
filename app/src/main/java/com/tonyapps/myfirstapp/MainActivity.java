@@ -1,11 +1,15 @@
 package com.tonyapps.myfirstapp;
 
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
@@ -87,11 +91,28 @@ public class MainActivity extends AppCompatActivity {
                 ex.printStackTrace();
                 return;
             }
-
             difference = (current >= last) ? current - last :
                          (current + MeterOverFlow.METER_MAXIMUM_VALUE.value - last);
-            resultTextView.setText("Consumtion: ");
+            resultTextView.setText(getText(R.string.consumption));
+            resultTextView.append(getText(R.string.tabulator));
             resultTextView.append(difference.toString());
+            resultTextView.append(getText(R.string.consumptionUnit));
+            resultTextView.append(getText(R.string.nextLine));
+            resultTextView.append(getText(R.string.nextLine));
+            resultTextView.append(getText(R.string.paymentAmount));
+            resultTextView.append(getText(R.string.tabulator));
+            ///TODO display Bussiness logic result here...
+//            resultTextView.append(currencyFormatted.format((double)logic.getBill(difference)));
+            resultTextView.append(getText(R.string.nextLine));
+            resultTextView.setTextColor(Color.BLACK);
+            resultTextView.setTypeface(null, Typeface.BOLD);
+
+            resultTextView.getTextColors();
+            ForegroundColorSpan colorSpan = (difference > 300) ?
+                    new ForegroundColorSpan(Color.RED) :
+                    new ForegroundColorSpan(Color.GREEN);
+            Spannable spannText = (Spannable) resultTextView.getText();
+            spannText.setSpan(colorSpan, 0, resultTextView.getText().length(), 2);
         }
     };
 
