@@ -15,6 +15,8 @@ import com.tonyapps.meterlogic.Meter;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,20 +30,21 @@ public class MainActivity extends AppCompatActivity {
             ex.printStackTrace();
         }
 
-        final EditText firstNumEditText = (EditText) findViewById(R.id.lastReadingEditText);
-        final EditText secondNumEditText = (EditText) findViewById(R.id.currentReadingEditText);
-        final TextView resultTextView = (TextView) findViewById(R.id.resultTextView);
+        final EditText firstNumEditText = findViewById(R.id.lastReadingEditText);
+        final EditText secondNumEditText = findViewById(R.id.currentReadingEditText);
+        final TextView resultTextView = findViewById(R.id.resultTextView);
 
-        Button addBtn = (Button) findViewById(R.id.calculateBtn);
-        addBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int num1 = (firstNumEditText.getText().length() == 0) ? 0 : Integer.parseInt(firstNumEditText.getText().toString());
-                int num2 = (secondNumEditText.getText().length() == 0) ? 0 : Integer.parseInt(secondNumEditText.getText().toString());
-                resultTextView.setText((num1 + num2) + "");
-            }
-        });
+//        Button addBtn = findViewById(R.id.calculateBtn);
+//        addBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                int num1 = (firstNumEditText.getText().length() == 0) ? 0 : Integer.parseInt(firstNumEditText.getText().toString());
+//                int num2 = (secondNumEditText.getText().length() == 0) ? 0 : Integer.parseInt(secondNumEditText.getText().toString());
+//                resultTextView.setText((num1 + num2) + "");
+//            }
+//        });
     }
+
 
     public JSONObject loadJSONFileFromAssets() {
         String json = null;
@@ -66,4 +69,37 @@ public class MainActivity extends AppCompatActivity {
         return null;
     }
 
+    public void calcBtnClicked(View view) {
+        btnListener.onClick(view);
+    }
+
+    private View.OnClickListener btnListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Integer last = 0, current = 0, difference;
+            TextView resultTextView = findViewById(R.id.resultTextView);
+            try {
+                last = Integer.parseInt(((EditText) findViewById(R.id.lastReadingEditText))
+                              .getText().toString());
+                current  = Integer.parseInt(((EditText) findViewById(R.id.currentReadingEditText))
+                                  .getText().toString());
+            } catch(NumberFormatException ex) {
+                ex.printStackTrace();
+                return;
+            }
+
+            difference = (current >= last) ? current - last :
+                         (current + MeterOverFlow.METER_MAXIMUM_VALUE.value - last);
+            resultTextView.setText("Consumtion: ");
+            resultTextView.append(difference.toString());
+        }
+    };
+
+    private enum MeterOverFlow{
+        METER_MAXIMUM_VALUE(100000);
+        private final Integer value;
+        MeterOverFlow(Integer value) {
+            this.value = value;
+        }
+    }
 }
