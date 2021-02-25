@@ -2,11 +2,15 @@ package com.tonyapps.myfirstapp;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -21,10 +25,18 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        android.support.v7.widget.Toolbar myToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+
+        this.lastReadingEditText = findViewById(R.id.lastReadingEditText);
+        this.currentReadingEditText = findViewById(R.id.currentReadingEditText);
+        this.resultTextView = findViewById(R.id.resultTextView);
+        this.calculateBtn = findViewById(R.id.calculateBtn);
 
         JSONObject tariff = loadJSONFileFromAssets();
 
@@ -33,22 +45,7 @@ public class MainActivity extends AppCompatActivity {
         } catch(JSONException ex) {
             ex.printStackTrace();
         }
-
-        final EditText firstNumEditText = findViewById(R.id.lastReadingEditText);
-        final EditText secondNumEditText = findViewById(R.id.currentReadingEditText);
-        final TextView resultTextView = findViewById(R.id.resultTextView);
-
-//        Button addBtn = findViewById(R.id.calculateBtn);
-//        addBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                int num1 = (firstNumEditText.getText().length() == 0) ? 0 : Integer.parseInt(firstNumEditText.getText().toString());
-//                int num2 = (secondNumEditText.getText().length() == 0) ? 0 : Integer.parseInt(secondNumEditText.getText().toString());
-//                resultTextView.setText((num1 + num2) + "");
-//            }
-//        });
     }
-
 
     public JSONObject loadJSONFileFromAssets() {
         String json = null;
@@ -91,16 +88,16 @@ public class MainActivity extends AppCompatActivity {
                 ex.printStackTrace();
                 return;
             }
-<<<<<<< Updated upstream
+
             difference = (current >= last) ? current - last :
                          (current + MeterOverFlow.METER_MAXIMUM_VALUE.value - last);
-            resultTextView.setText(getText(R.string.consumption));
+            resultTextView.setText(getText(R.string.paymentAmount));
             resultTextView.append(getText(R.string.tabulator));
             resultTextView.append(difference.toString());
-            resultTextView.append(getText(R.string.consumptionUnit));
+            //resultTextView.append(getText(R.string.consumptionUnit));
             resultTextView.append(getText(R.string.nextLine));
             resultTextView.append(getText(R.string.nextLine));
-            resultTextView.append(getText(R.string.paymentAmount));
+            //resultTextView.append(getText(R.string.paymentAmount));
             resultTextView.append(getText(R.string.tabulator));
             ///TODO display Bussiness logic result here...
 //            resultTextView.append(currencyFormatted.format((double)logic.getBill(difference)));
@@ -109,18 +106,14 @@ public class MainActivity extends AppCompatActivity {
             resultTextView.setTypeface(null, Typeface.BOLD);
 
             resultTextView.getTextColors();
+            ColorDrawable cd = (ColorDrawable) findViewById(R.id.toolbar).getBackground();
+            int icolor = cd.getColor();
             ForegroundColorSpan colorSpan = (difference > 300) ?
                     new ForegroundColorSpan(Color.RED) :
-                    new ForegroundColorSpan(Color.GREEN);
+                    new ForegroundColorSpan(cd.getColor());
+
             Spannable spannText = (Spannable) resultTextView.getText();
             spannText.setSpan(colorSpan, 0, resultTextView.getText().length(), 2);
-=======
-
-            difference = (current >= last) ? current - last :
-                         (current + MeterOverFlow.METER_MAXIMUM_VALUE.value - last);
-            resultTextView.setText("Consumtion: ");
-            resultTextView.append(difference.toString());
->>>>>>> Stashed changes
         }
     };
 
@@ -131,4 +124,8 @@ public class MainActivity extends AppCompatActivity {
             this.value = value;
         }
     }
+
+    private EditText lastReadingEditText, currentReadingEditText;
+    private TextView resultTextView;
+    private Button calculateBtn;
 }
