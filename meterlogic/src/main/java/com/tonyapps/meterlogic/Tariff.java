@@ -8,14 +8,14 @@ import java.util.ArrayList;
  * @brief Tariff
  */
 public class Tariff {
-    private static Integer rangeAmount = 0;
+    private Integer rangeAmount = 0;
     private static final Integer ROUND_ON_CENTS = 20;
 
     private ArrayList observers;
     private Range[] ranges;
 
     public Integer getRangeAmount(){
-        return rangeAmount;
+        return this.rangeAmount;
     }
 
     public Tariff() {
@@ -23,13 +23,13 @@ public class Tariff {
     }
 
     public Tariff(Integer rangeCount){
-        rangeAmount = 0;
+        this.rangeAmount = 0;
         ranges = new Range[rangeCount];
     }
 
     public boolean addRange(Range anotherRange){
         this.ranges[getRangeAmount()] = anotherRange;
-        rangeAmount++;
+        this.rangeAmount++;
         return true;
     }
 
@@ -37,7 +37,7 @@ public class Tariff {
         if(value < 0)
             return -1;
         Integer rangeValue = 0;
-        for(Integer loop = 0; loop < rangeAmount; loop++){
+        for(Integer loop = 0; loop < this.rangeAmount; loop++){
             if(value <= ranges[loop].getMaximumValue()){
                 rangeValue = loop;
                 break;
@@ -69,7 +69,7 @@ public class Tariff {
     }
 
     public float getMaximimAmountOnRange(Integer range){
-        if (range >= rangeAmount)
+        if (range >= this.rangeAmount)
             return 0.0f;
         return this.ranges[range].getMaximumTaxAmount();
     }

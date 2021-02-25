@@ -64,7 +64,7 @@ public class Meter {
             int itemMany = ob.length();
             this.tariff2009 = new Tariff(itemMany);
             this.tariff = new Tariff(ob.length());
-            Integer count = 0;
+            Integer count09 = 0, count = 0;
             if(items != null) {
                 for(int index = 0; index < itemMany; index++) {
                    JSONObject value = ob.getJSONObject(items.getString(index));
@@ -74,15 +74,15 @@ public class Meter {
                    boolean isLast = value.getBoolean("isLast");
                    this.tariff2009.addRange((isLast) ? new Range(minVal, tax)
                                                      : new Range(minVal, maxVal, tax));
-                   count = this.tariff2009.getRangeAmount();
+                   count09 = this.tariff2009.getRangeAmount();
 
-//                   this.tariff.addRange((value.getBoolean("isLast")) ?
-//                                         new Range(value.getInt("minValue"),
-//                                                   (float)value.getDouble("tax")) :
-//                                         new Range(value.getInt("minValue"),
-//                                                   value.getInt("maxValue"),
-//                                                   (float)value.getDouble("tax")));
-//                   count = this.tariff.getRangeAmount();
+                   this.tariff.addRange((value.getBoolean("isLast")) ?
+                                         new Range(value.getInt("minValue"),
+                                                   (float)value.getDouble("tax")) :
+                                         new Range(value.getInt("minValue"),
+                                                   value.getInt("maxValue"),
+                                                   (float)value.getDouble("tax")));
+                   count = this.tariff.getRangeAmount();
                 }
             }
         }
