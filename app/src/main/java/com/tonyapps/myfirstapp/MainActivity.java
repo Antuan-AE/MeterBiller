@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 ex.printStackTrace();
                 return;
             }
+<<<<<<< Updated upstream
             difference = (current >= last) ? current - last :
                          (current + MeterOverFlow.METER_MAXIMUM_VALUE.value - last);
             resultTextView.setText(getText(R.string.consumption));
@@ -113,6 +114,13 @@ public class MainActivity extends AppCompatActivity {
                     new ForegroundColorSpan(Color.GREEN);
             Spannable spannText = (Spannable) resultTextView.getText();
             spannText.setSpan(colorSpan, 0, resultTextView.getText().length(), 2);
+=======
+
+            difference = (current >= last) ? current - last :
+                         (current + MeterOverFlow.METER_MAXIMUM_VALUE.value - last);
+            resultTextView.setText("Consumtion: ");
+            resultTextView.append(difference.toString());
+>>>>>>> Stashed changes
         }
     };
 
