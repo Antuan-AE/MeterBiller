@@ -26,13 +26,13 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/back_button"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentLeft="true"
-                    android:background="@drawable/back_btn"
-                     />
+                <!--<Button-->
+                    <!--android:id="@+id/back_button"-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:background="@drawable/back_btn"-->
+                     <!--/>-->
 
                 <!--<TextView-->
                     <!--android:id="@+id/textView_screen_name"-->
