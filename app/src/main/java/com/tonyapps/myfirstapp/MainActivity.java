@@ -23,8 +23,6 @@ import com.tonyapps.meterlogic.Meter;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
